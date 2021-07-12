@@ -1,11 +1,11 @@
 <template>
   <div>
-      <div v-for="(film,index) in filmlist" :key="index">
-          <div class="film-box">
-          {{film.title}}
-          {{film.original_title}}
-          {{film.original_language}}
-          {{film.vote_average}}
+      <div class="film-box" v-for="(film,index) in filmlist" :key="index">
+          <div>
+                <div>{{film.title}} </div>
+                <div>{{film.original_title}}  </div>
+                <div>{{film.original_language}} </div>
+                <div>{{film.vote_average}} </div>
           </div>
 
       </div>
@@ -39,8 +39,10 @@ export default {
 
 <style lang="scss">
     .film-box{
+        margin: 5px;
         display: inline-flex;
-        flex-direction: initial;
+        
+        border: 2px solid black;
         height: 200px;
         width: 200px;
     }
