@@ -3,7 +3,7 @@
       <h2>I MIEI FILM</h2>
         <div class="container">
             <div class="row">
-                <div class="col big-box" v-for="(film,index) in films" :key="index" >
+                <div class="col-3 big-box" v-for="(film,index) in films" :key="index" >
                     <div class="film-box">
                             <div class="img-box"><img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt=""></div>
                             <div class="show">
@@ -19,19 +19,24 @@
         </div>
         
 
-  <!--         <h2>LE MIE SERIE TV</h2>
+          <h2>LE MIE SERIE TV</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col-3 big-box" v-for="(serie,index) in serielist" :key="index" >
-                    <div class="film-box" v-if="serie.name.toLowerCase().includes(ric.toLowerCase())">
-                        <div>{{serie.name}} </div>
-                        <div>{{serie.original_name}}  </div>
-                        <div class="bandiera"><img :src="'/assets/'+ serie.original_language.toLowerCase()+'.png'"></div>
-                        <div>{{serie.vote_average}} </div>
+                    <div class="col-3 big-box" v-for="(serie,index) in series" :key="index" >
+                    <div class="film-box">
+                        <div class="img-box"> <img :src="'https://image.tmdb.org/t/p/w300'+ serie.poster_path" alt=""></div>
+                        <div class="show">
+                            <div>{{serie.name}} </div>
+                            <div>{{serie.original_name}}  </div>
+                            <div class="bandiera"><img :src="'/assets/'+ serie.original_language.toLowerCase()+'.png'"></div>
+                            <div>{{serie.vote_average}} </div>
+
+                        </div>
                 </div>
 
                 </div>
-            </div> -->
+            </div>
+            </div>
 
 
   </div>
@@ -50,6 +55,7 @@ export default {
     },
     props:{
         films : Array,
+        series: Array,
     }
 }
 </script>
