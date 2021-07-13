@@ -3,8 +3,8 @@
       <h2>I MIEI FILM</h2>
         <div class="container">
             <div class="row">
-                <div class="col big-box" v-for="(film,index) in filmlist" :key="index" >
-                    <div class="film-box" v-if="film.title.toLowerCase().includes(ric.toLowerCase())">
+                <div class="col big-box" v-for="(film,index) in films" :key="index" >
+                    <div class="film-box">
                             <div class="img-box"><img :src="'https://image.tmdb.org/t/p/w300'+film.poster_path" alt=""></div>
                             <div class="show">
                                 <div>{{film.title}} </div>
@@ -19,7 +19,7 @@
         </div>
         
 
-          <h2>LE MIE SERIE TV</h2>
+  <!--         <h2>LE MIE SERIE TV</h2>
             <div class="container">
                 <div class="row">
                     <div class="col-3 big-box" v-for="(serie,index) in serielist" :key="index" >
@@ -31,53 +31,31 @@
                 </div>
 
                 </div>
-            </div>
+            </div> -->
 
-      </div>
+
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
     data(){
         return{
-            apiFilmUrl: 'https://api.themoviedb.org/3/movie/popular?api_key=e074c01e562b214f49b0d0b915aa74f1',
+/*             apiFilmUrl: 'https://api.themoviedb.org/3/search/movie?api_key=e4f1a7e862417c6e22ee5a0fffab8242&language=en-US&page=1&include_adult=false&query=', */
             /* https://api.themoviedb.org/3/search/movie?api_key=e4f1a7e862417c6e22ee5a0fffab8242&language=en-US&page=1&include_adult=false&query=matrix */
-            filmlist:[],
+            /* filmlist:[],
             apiSerieUrl:'https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=s',
-            serielist:[],
+            serielist:[], */
         }
     },
     props:{
-        ric : String,
-    },
-    created(){
-        this.getFilms();
-        this.getSeries();
-    },
-    methods:{
-        getFilms(){
-            axios
-                .get(this.apiFilmUrl)
-                .then(response =>{
-                    this.filmlist= response.data.results;
-                    console.log(this.filmlist);
-                })
-        },
-        getSeries(){
-            axios
-                .get(this.apiSerieUrl)
-                .then(response =>{
-                    this.serielist=response.data.results;
-                    console.log(this.serielist);
-                })
-        }
+        films : Array,
     }
 }
 </script>
 
 <style lang="scss" scoped>
+    
     .big-box{
         display: inline-flex;
         .film-box{
@@ -110,4 +88,5 @@ export default {
         }
         }
     }
+
 </style>
