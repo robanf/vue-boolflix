@@ -18,10 +18,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    input{
-        margin: 10px;
-        padding: 5px;
-        border: 3px solid rgb(167, 3, 3);
-        border-radius: 5px ;
+    div{
+        background-color: black;
+        display: flex;
+        justify-content: end;
+        input{
+
+            margin: 10px;
+            padding: 5px;
+            border: 3px solid rgb(167, 3, 3);
+            border-radius: 5px ;
+            
+        }
     }
 </style>
